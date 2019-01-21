@@ -101,6 +101,7 @@ nav .searchbox:focus {
 .video-list {
   width: 80%;
   margin: 20px auto;
+  min-height: calc(100vh - 144px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
@@ -123,15 +124,32 @@ nav .searchbox:focus {
   position: relative;
 }
 
+.video-cover-overlay {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+}
+
+.video-cover-overlay:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .video-cover p {
   background: #333;
   display: inline-block;
   color: white;
   padding: 3px;
+  margin-bottom: 0;
   border-radius: 5px;
   position: absolute;
   bottom: 0px;
   right: 0;
+}
+
+.video-details h1 {
+  margin-top: 30px;
 }
 
 .video-details p span {
@@ -152,6 +170,19 @@ nav .searchbox:focus {
 
 .video-details .video-views {
   color: grey;
+}
+
+footer {
+  height: 30px;
+  border-top: 1px solid rgba(0,0,0,0.3);
+  padding: 10px;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  margin-left: 3%;
 }
 
 @media screen and (max-width: 980px) {
@@ -189,5 +220,10 @@ nav .searchbox:focus {
     border-bottom: 0.5px solid rgba(0,0,0,0.5);
     border-left: none;
     width: 100%;
+  }
+
+  nav .searchbox {
+    width: 50%;
+    margin-left: 10%;
   }
 }
